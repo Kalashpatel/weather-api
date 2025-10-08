@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- icons -->
+     <link rel="stylesheet" href="assests/css/bootstrap-icons.min.css">
+    <!-- font awesome -->
+     <link rel="stylesheet" href="assests/css/all.min.css">
+    <!-- fonts -->
+     <link rel="stylesheet" href="assests/css/offline-font.css">
+    <!-- bootstrap css -->
+     <link rel="stylesheet" href="assests/css/bootstrap.min.css">
+    <!-- custom stylesheet -->
+     <link rel="stylesheet" href="assests/css/style.css">
+    <!-- media query -->
+     <link rel="stylesheet" href="assests/css/media.css">
+    <title>weather api</title>
+</head>
+<body>
+
+    <main class="container py-5">
+    <h1 class="mb-4">Weather by Latitude & Longitude</h1>
+
+    <form id="coordsForm" class="row g-3 align-items-end">
+      <div class="col-md-5">
+        <label for="lat" class="form-label">Latitude</label>
+        <input type="number" step="any" class="form-control" id="lat" placeholder="e.g. 21.1702" required>
+      </div>
+
+      <div class="col-md-5">
+        <label for="lon" class="form-label">Longitude</label>
+        <input type="number" step="any" class="form-control" id="lon" placeholder="e.g. 72.8311" required>
+      </div>
+
+      <div class="col-md-2 d-grid">
+        <button type="submit" id="fetchBtn" class="btn btn-primary">Get Weather</button>
+      </div>
+    </form>
+
+    <div id="msg" class="mt-3"></div>
+
+    <div class="mt-3 d-flex gap-2">
+      <button id="useLocationBtn" class="btn btn-outline-secondary btn-sm">Use my current location</button>
+      <button id="clearBtn" class="btn btn-outline-danger btn-sm">Clear</button>
+    </div>
+
+    <hr class="my-4" />
+    <p class="text-muted small">
+      Tip: Use decimal degrees for latitude and longitude. The app uses OpenWeather One Call 3.0 API.
+    </p>
+  </main>
+
+  <!-- Weather Modal -->
+  <div class="modal fade" id="weatherModal" tabindex="-1" aria-labelledby="weatherModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="weatherModalLabel">Weather</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="modalBodyContent">
+            <div class="text-center py-3" id="modalLoader">Enter coordinates and press <strong>Get Weather</strong>.</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <small class="text-muted me-auto">Data: OpenWeather One Call 3.0</small>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assests/js/bootstrap.bundle.min.js"></script>
+  <script src="assests/js/script.js"></script>
+
+</body>
+</html>
